@@ -1,0 +1,10 @@
+[bessy3_no-tg-in-unit-cell_v_notg-tgrb-b60-6bend-6sx]
+title = "BESSY 3, NoTG in unitcell, 6MBA"
+machine = "bessy3"
+authors = ["Bettina Kuske", "Johan Bengtsson"]
+energy = 2500
+simulations = ["elegant", "madx"]
+labels = []
+description = """
+BESSY 3 candidiate with no transverse gradient in unit cell, bend length 60 cmm, 6MBA
+"""

@@ -1,0 +1,22 @@
+[bessy3_5ba-20p_v_reference]
+title = "BESSY 3 Design Kuske 5BA 20p Reference"
+machine = "bessy3"
+authors = ["Bettina Kuske"]
+energy = 2500
+simulations = ["apace", "elegant", "madx"]
+labels = []
+description = """
+Referenzlösung (kleines alpha)
+"""
+
+[bessy3_5ba-20p_v_long-bend-tgrb]
+title = "BESSY 3 Design Kuske 5BA 20p Long Bend TGRB"
+machine = "bessy3"
+authors = ["Bettina Kuske"]
+energy = 2500
+simulations = ["elegant"]
+labels = ["antibends", "combined function bends"]
+description = """
+5bend MBA lattice, 20 Perioden, langer Dipol mit transversem Gradienten und Gradienten 
+im reverse bend, sprich versetzter Quadrupol
+"""

@@ -1,0 +1,36 @@
+d01: drif, l=2.5
+d02: drif, l=0.1
+d2: drif, l=0.15
+d30: drif, l=0.08
+d31: drif, l=0.07
+d321: drif, l=0.1
+d32: drif, l=0.1
+d4: drif, l=0.1
+d51: drif, l=0.15
+d52: drif, l=0.15
+d6: drif, l=0.15
+d7: drif, l=0.15
+d8: drif, l=0.15
+d9: drif, l=0.15
+d10: drif, l=0.15
+d11: drif, l=0.15
+q11: kquad, l=0.2, k1=9.07604260950956
+q12: kquad, l=0.1, k1=-8.041551395802012
+q2: kquad, l=0.2, k1=5.558470168122581
+q3: kquad, l=0.2, k1=7.938321847851201
+b1: csbend, l=0.4, angle=0.03068, k1=-3.780605104480353
+b2: csbend, l=0.7, angle=0.061359, k1=-3.507301103878645
+b3: csbend, l=0.7, angle=0.061359, k1=-4.076748287461757
+b4: csbend, l=0.7, angle=0.061359, k1=-3.554866527835924
+b5: csbend, l=0.35, angle=0.03068, k1=-3.570471492051243
+s1: ksext, l=0.3,  k2 = 0
+s2: ksext, l=0.3,  k2 = 0
+s3: ksext, l=0.15,  k2 = 0
+s4: ksext, l=0.1,  k2 = 0
+q4: csbend, l=0.4, angle=-0.016362, k1=7.099234091368177
+q5: csbend, l=0.4, angle=-0.016362, k1=6.884158688176788
+q6: csbend, l=0.4, angle=-0.016362, k1=6.628159890552534
+hcell: line=(d01, q11, d02, q12, d2, b1, d30,  s4, d31, q2, d321, s1, d32, s2, d4, q3, d51, s3, d52, &
+ b2, d6, q4, d6, b3, d8, q5, d8, b4, d10, q6, d10, b5)
+cell: line=(hcell, -hcell)
+ring: line=(20 * cell)

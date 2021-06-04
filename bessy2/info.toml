@@ -1,0 +1,23 @@
+[bessy2_stduser-2019-05-07-v_1]
+machine = "bessy2"
+title = "BESSY II Standard User 2019"
+authors = ["HZB"]
+energy = 1700
+simulations = ["apace", "elegant", "madx"]
+labels = []
+description = """
+Standard User lattice of the BESSY II storage ring
+(Here as reference and to test stuff!)
+"""
+
+[bessy2_design-1996_v_1]
+machine = "bessy2"
+title = "BESSY II Design Lattice 1996"
+authors = ["HZB"]
+energy = 1700
+simulations = ["apace", "elegant", "madx"]
+labels = []
+description = """
+Fully symmetric Design Lattice of the BESSY II storage ring
+(Here as reference and to test stuff!)
+"""

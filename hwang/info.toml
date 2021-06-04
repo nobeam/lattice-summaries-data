@@ -1,0 +1,20 @@
+[bessy3_4sexts_v_1]
+machine = "bessy3"
+title = "BESSY 3 Design Hwang 4 Sexts"
+authors = ["Ji-Gwang Hwang"]
+energy = 2500
+labels = ["combined function bends"]
+simulations = ["elegant", "madx"]
+description = """
+"""
+
+[bessy3_5sexts_v_1]
+name = "bessy3_5sexts_v_1"
+machine = "bessy3"
+title = "BESSY 3 Design Hwang 5 Sexts"
+authors = ["Ji-Gwang Hwang"]
+energy = 2500
+simulations = ["elegant", "madx"]
+labels = ["combined function bends"]
+description = """
+"""

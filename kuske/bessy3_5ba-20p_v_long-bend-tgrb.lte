@@ -1,0 +1,59 @@
+!..\examples\example-cells\lattices talk 2\5bend_20p_longbend-tg-tgrb.opa
+
+!opa to elegant export
+
+!----- table of elements ---------------------------------------------
+
+l0   : drift, l = 0.100000
+l1   : drift, l = 0.100000
+l2   : drift, l = 0.100000
+l3   : drift, l = 0.100000
+ml0  : drift, l = 0.050000
+ml1  : drift, l = 0.050000
+ml2  : drift, l = 0.100000
+ml3  : drift, l = 0.100000
+ul0  : drift, l = 0.100000
+ul1  : drift, l = 0.100000
+ul2  : drift, l = 0.100000
+ul3  : drift, l = 0.100000
+ul4  : drift, l = 2.500000
+o1l  : drift, l = 0.040000
+
+q0   : kquad, l = 0.090000, k1 = -10.424964
+q0a  : kquad, l = 0.090000, k1 = -11.000000
+q1   : kquad, l = 0.130000, k1 = 11.138731
+q1a  : kquad, l = 0.090000, k1 = 3.348660
+mq0  : kquad, l = 0.100000, k1 = 0.000000
+mq1  : kquad, l = 0.090000, k1 = -4.393642
+mq2  : kquad, l = 0.090000, k1 = 11.616342
+uq1  : kquad, l = 0.160000, k1 = -11.036002
+uq2  : kquad, l = 0.260000, k1 = 11.463513
+uq3  : kquad, l = 0.100000, k1 = -11.313212
+
+b0   : csbend, l = 0.400000, angle = 0.040143, k1 = -2.251588, e1 = 0.000000,&
+       e2 = 0.040143
+b1   : csbend, l = 0.130000, angle = -0.003578, k1 = 11.105635, e1 = -0.001789,&
+       e2 = -0.001789
+mb0  : csbend, l = 0.230000, angle = 0.047386, k1 = 0.000000, e1 = 0.023693,&
+       e2 = 0.023693
+mb1  : csbend, l = 0.050000, angle = 0.000000, k1 = 0.000000, e1 = 0.000000,&
+       e2 = 0.000000
+
+s0   : ksext, l = 0.060000, k2 = 2466.636714
+s0a  : ksext, l = 0.040000, k2 = 1507.176570
+s1   : ksext, l = 0.080000, k2 = -2365.947362
+s1a  : ksext, l = 0.080000, k2 = 1571.538256
+s3   : ksext, l = 0.080000, k2 = -908.646612
+s4   : ksext, l = 0.080000, k2 = -505.892284
+s5   : ksext, l = 0.080000, k2 = 452.410482
+
+!----- table of segments ---------------------------------------------
+
+cell_inner : line=(b0, l1, s1, l1, b1, l3, s0)
+cell1      : line=(b0, l1, s1, l1, q1a, l2, b1, l3, s0a)
+mbacell    : line=(-cell_inner, cell_inner)
+mcell      : line=(mb0, ml3, mq1, ml2, s1a, ml2, mq2, ml1, ml0, s0a)
+mund       : line=(ul0, s3, ul0, uq1, ul1, uq2, ul2, s5, ul2, uq3, ul4)
+match      : line=(cell1, -mcell, mund)
+cell       : line=(-match, cell_inner, mbacell, -cell_inner, match)
+ring       : line=(20 * cell)

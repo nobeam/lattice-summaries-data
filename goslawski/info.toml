@@ -1,0 +1,10 @@
+[mls2_scaled-from-bessy2_v_wp-x9211-y3153]
+title = "mls2 based on bessy2"
+machine = "mls2"
+authors = ["Goslawski"]
+energy = 1200
+simulations = ["apace", "elegant", "madx"]
+labels = []
+description = """
+A possible design lattice for the MLS2 based on a scaled down version of BESSY 2
+"""

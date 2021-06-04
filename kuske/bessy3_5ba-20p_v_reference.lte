@@ -1,0 +1,51 @@
+!----- table of elements ---------------------------------------------
+
+l0  : drift, l = 0.100000
+l1  : drift, l = 0.100000
+l2  : drift, l = 0.100000
+l3  : drift, l = 0.100000
+ml0 : drift, l = 0.050000
+ml1 : drift, l = 0.050000
+ml2 : drift, l = 0.100000
+ml3 : drift, l = 0.100000
+ul0 : drift, l = 0.100000
+ul1 : drift, l = 0.100000
+ul2 : drift, l = 0.100000
+ul3 : drift, l = 0.100000
+ul4 : drift, l = 2.500000
+o1l : drift, l = 0.040000
+
+q0  : kquad, l = 0.090000, k1 = -11.102108
+q1  : kquad, l = 0.140000, k1 = 11.052113
+q1a : kquad, l = 0.120000, k1 = 11.335714
+mq0 : kquad, l = 0.100000, k1 = 0.000000
+mq1 : kquad, l = 0.130000, k1 = -11.304641
+mq2 : kquad, l = 0.160000, k1 = 11.684475
+uq1 : kquad, l = 0.090000, k1 = -9.208116
+uq2 : kquad, l = 0.240000, k1 = 11.669158
+uq3 : kquad, l = 0.090000, k1 = -11.061242
+
+b0  : csbend, l = 0.230000, angle = 0.041713, e1 = 0.000000, e2 = 0.041713
+b1  : csbend, l = 0.050000, angle = -0.003578, e1 = -0.001789, e2 = -0.001789
+mb0 : csbend, l = 0.230000, angle = 0.042673, e1 = 0.021337, e2 = 0.021337
+mb1 : csbend, l = 0.050000, angle = 0.000000, e1 = 0.000000, e2 = 0.000000
+
+s0  : ksext, l = 0.060000, k2 = 1443.469812
+s0a : ksext, l = 0.040000, k2 = 1565.266590
+s1  : ksext, l = 0.080000, k2 = -1524.494900
+s1a : ksext, l = 0.080000, k2 = -175.156788
+s3  : ksext, l = 0.080000, k2 = -815.823140
+s4  : ksext, l = 0.080000, k2 = -505.892284
+s5  : ksext, l = 0.080000, k2 = 1007.912528
+
+
+!----- table of segments ---------------------------------------------
+
+cell_inner  : line=(b0, l0, q0, l1, s1, l1, q1, l2, b1, l3, s0)
+mbacell     : line=(2 * (cell_inner, -cell_inner))
+cell1       : line=(b0, l0, q0, l1, s1, l1, q1a, l2, b1, l3, s0a)
+mcell       : line=(mb0, ml3, mq1, ml2, s1a, ml2, mq2, ml1, ml0, s0a)
+mund        : line=(ul0, s3, ul0, uq1, ul1, uq2, ul2, s5, ul2, uq3, ul4)
+match       : line=(cell1, -mcell, mund)
+cell        : line=(-match, mbacell, match)
+ring        : line=(20 * cell)
